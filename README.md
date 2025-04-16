@@ -5,3 +5,23 @@ A library to parse data from MEXT (Ministry of Education, Culture, Sports, Scien
 ## Installation
 
 ...
+
+## WIP
+
+- [x] Prefecture
+- [x] City
+- [x] School Name
+- [x] Address
+- [x] Contact Company
+- [x] Contact Data (Phone number)
+- [ ] Zoning
+- [ ] Size
+- [ ] Structure data
+- [ ] Building completion year
+- [ ] Facilities
+- [ ] Area (total, floor, number of floors)
+- [ ] Recruitment details
+- [ ] Transfer conditions
+- [ ] Remarks
+- [x] Images
+- [x] Tags
