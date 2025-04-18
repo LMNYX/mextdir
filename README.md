@@ -16,20 +16,20 @@ MEXT（文部科学省）『みんなの廃校』プロジェクトからデー�
 
 ## WIP 進行中
 
-- [x] Prefecture
-- [x] City
-- [x] School Name
-- [x] Address
-- [x] Contact Company
-- [x] Contact Data (Phone number)
-- [x] Zoning
-- [x] Size
-- [ ] Structure data
-- [ ] Building completion year
-- [ ] Facilities
-- [ ] Area (total, floor, number of floors)
-- [x] Recruitment details
-- [ ] Transfer conditions
-- [ ] Remarks
-- [x] Images
-- [x] Tags
+- [x] Prefecture 　・　県名
+- [x] City　・　市名
+- [x] School Name　・　学校名
+- [x] Address　・　住所
+- [x] Contact Company　・　連絡先会社
+- [x] Contact Data (Phone number)　・　連絡先
+- [x] Zoning　・　用途地域
+- [x] Size　・　土地面積
+- [ ] Structure data　・　構造
+- [ ] Building completion year　・　竣工年
+- [ ] Facilities　・　施設区分
+- [ ] Area (total, floor, number of floors)　・　建築面積（㎡）、延床面積（㎡）、階数
+- [x] Recruitment details　・　募集内容
+- [ ] Transfer conditions　・　貸与と譲渡条件等
+- [ ] Remarks　・　備考
+- [x] Images　・　写真
+- [x] Tags　・　タグ
