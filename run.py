@@ -165,7 +165,11 @@ for pidx, page_layout in enumerate(extract_pages("test.pdf")):
         else:
             page_extraction['contact_data'] = '無し'
 
-    # TODO: add extraction for URL/email at 404.4, 425.71624 [y,x]
+    addition_contact_probable = closest_element_to_coordinates("test.pdf", 541.75, 435.4, pidx)
+    if addition_contact_probable and len(addition_contact_probable) > 0 and addition_contact_probable[0] is not None and addition_contact_probable[0].get_text().strip() != "募集内容":
+        page_extraction['contact_data'] += f" {addition_contact_probable[0].get_text().strip()}"
+        page_extraction['tags'].append("ADDITIONAL_CONTACT_DATA_OCR")
+
 
     zoning_info_probable = closest_element_to_coordinates("test.pdf", 74.88, 303.1978, pidx)
     if zoning_info_probable and len(zoning_info_probable) > 0 and zoning_info_probable[0] is not None:
