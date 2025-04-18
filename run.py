@@ -165,7 +165,7 @@ for pidx, page_layout in enumerate(extract_pages("test.pdf")):
         else:
             page_extraction['contact_data'] = '無し'
 
-    l = [303.19780000000003, 74.88]
+    # TODO: add extraction for URL/email at 404.4, 425.71624 [y,x]
 
     zoning_info_probable = closest_element_to_coordinates("test.pdf", 74.88, 303.1978, pidx)
     if zoning_info_probable and len(zoning_info_probable) > 0 and zoning_info_probable[0] is not None:
@@ -180,8 +180,17 @@ for pidx, page_layout in enumerate(extract_pages("test.pdf")):
         page_extraction['tags'].append("SIZE_DATA_OCR")
     else:
         page_extraction['size'] = '無し'
-    
 
+    # ...
+
+    recruitment_info_probable = closest_element_to_coordinates("test.pdf", 466.45, 333.25, pidx)
+
+    if recruitment_info_probable and len(recruitment_info_probable) > 0 and recruitment_info_probable[0] is not None and len(recruitment_info_probable[0].get_text()) > 5:
+
+        page_extraction['recruitment_details'] = recruitment_info_probable[0].get_text().strip()
+        page_extraction['tags'].append("RECRUITMENT_DATA_OCR")
+    else:
+        page_extraction['recruitment_details'] = '無し'
 
     # Images
     page_extraction['images'] = extract_images_from_page('test.pdf', pidx)

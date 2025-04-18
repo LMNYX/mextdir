@@ -15,12 +15,12 @@ A library to parse data from MEXT (Ministry of Education, Culture, Sports, Scien
 - [x] Contact Company
 - [x] Contact Data (Phone number)
 - [x] Zoning
-- [ ] Size
+- [x] Size
 - [ ] Structure data
 - [ ] Building completion year
 - [ ] Facilities
 - [ ] Area (total, floor, number of floors)
-- [ ] Recruitment details
+- [x] Recruitment details
 - [ ] Transfer conditions
 - [ ] Remarks
 - [x] Images
