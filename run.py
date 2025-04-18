@@ -174,6 +174,14 @@ for pidx, page_layout in enumerate(extract_pages("test.pdf")):
     else:
         page_extraction['zoning'] = '無し'
 
+    size_info_probable = closest_element_to_coordinates("test.pdf", 190, 325, pidx)
+    if size_info_probable and len(size_info_probable) > 0 and size_info_probable[0] is not None:
+        page_extraction['size'] = size_info_probable[0].get_text().strip()
+        page_extraction['tags'].append("SIZE_DATA_OCR")
+    else:
+        page_extraction['size'] = '無し'
+    
+
 
     # Images
     page_extraction['images'] = extract_images_from_page('test.pdf', pidx)
