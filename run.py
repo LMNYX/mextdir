@@ -124,15 +124,14 @@ extracted_data = []
 for pidx, page_layout in enumerate(extract_pages("test.pdf")):
     print(f"Page {pidx+1} -----")
 
-    page_contents = extract_text("test.pdf", page_numbers=[pidx+1])
 
     page_extraction = {
-        "prefecture": "",
-        "city": "",
-        "name": "",
-        "address": "",
-        "contact_company": "",
-        "contact_data": "",
+        "prefecture": "", #
+        "city": "", # 
+        "name": "", #
+        "address": "", #
+        "contact_company": "", #
+        "contact_data": "", #
         "zoning": "",
         "size": "",
         "structure": "",
@@ -144,8 +143,8 @@ for pidx, page_layout in enumerate(extract_pages("test.pdf")):
         "recruitment_details": "",
         "transfer_conditions": "",
         "remarks": "",
-        "images": [],
-        "tags": []
+        "images": [], #
+        "tags": [] #
     }
     text_elements = [el for el in page_layout if isinstance(el, LTTextContainer)]
     
@@ -162,12 +161,22 @@ for pidx, page_layout in enumerate(extract_pages("test.pdf")):
         test = closest_element_to_coordinates("test.pdf", 777, 525, pidx+1)
         if test and len(test) > 0 and test[0] is not None:
             page_extraction['contact_data'] = test[0].get_text().strip()
-            page_extraction['tags'].append("POSSIBLE_TRASH_CONTACT_DATA")
+            page_extraction['tags'].append("CONTACT_DATA_OCR")
         else:
             page_extraction['contact_data'] = '無し'
 
+    l = [303.19780000000003, 74.88]
+
+    zoning_info_probable = closest_element_to_coordinates("test.pdf", 74.88, 303.1978, pidx)
+    if zoning_info_probable and len(zoning_info_probable) > 0 and zoning_info_probable[0] is not None:
+        page_extraction['zoning'] = zoning_info_probable[0].get_text().strip()
+        page_extraction['tags'].append("ZONING_DATA_OCR")
+    else:
+        page_extraction['zoning'] = '無し'
+
+
     # Images
-    page_extraction['images'] = extract_images_from_page('test.pdf', pidx+1)
+    page_extraction['images'] = extract_images_from_page('test.pdf', pidx)
 
 
     # for idx, element in enumerate(text_elements):
