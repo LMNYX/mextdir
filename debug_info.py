@@ -42,7 +42,8 @@ def draw_on_page(doc, page_index, elements, total_pages):
     global drawn_pages
     page = doc[page_index]
     height = page.rect.height
-    for el in elements:
+    for elindex, el in enumerate(elements):
+        print(f"{page_index+1}/{len(doc)}:: Drawing {elindex}/{len(elements)} <{el}>")
         x0, y0, x1, y1 = el["bbox"]
         fitz_rect = fitz.Rect(x0, height - y1, x1, height - y0)
         page.draw_rect(fitz_rect, color=(1, 0, 0), width=0.5)
