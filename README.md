@@ -2,6 +2,9 @@
 
 A library to parse data from MEXT (Ministry of Education, Culture, Sports, Science and Technology of Japan) みんなの廃校 project. Finetuned to get as much **accurate** data as possible, because PDFs are a pain in the ass.
 
+> [!NOTE]  
+> Accuracy of this is questionable at best as of now, I will continue to test and fix it as it goes.
+
 ## Installation
 
 ...
